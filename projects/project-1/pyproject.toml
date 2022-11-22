@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "project-1"
+version = "0.1.0"
+description = ""
+authors = ["Alexandre Candeias"]
+readme = "README.md"
+packages = [
+    {include = "project_1"},
+    {include = "library_example", from="../../libraries/library-example"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.23.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+project-1-cli = 'project_1.main:main'
